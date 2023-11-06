@@ -1,0 +1,28 @@
+int main ( )
+{
+    string error;
+    float res;
+
+    int a = 15;
+    int b = 11;
+    float y = 12.2;
+    int num = 132;
+
+    int a = 10;
+    a = b + "j";
+
+    if ( a > b ) {
+        num = 10;
+    }
+
+    error = error + "h";
+    i = error * a;
+    
+    string texto = "Traductores 2";
+    string cadena;
+    cadena = texto;
+
+    while ( b < a ) {
+        cout << num << endl;
+    }
+}

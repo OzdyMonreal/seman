@@ -1,0 +1,78 @@
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).exe
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).deps.json
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).runtimeconfig.json
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).dll
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\ref\Analizador Lexico (Traductor).dll
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).pdb
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.AssemblyReference.cache
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador_Lexico__Traductor_.Form1.resources
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.GenerateResource.cache
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).AssemblyInfoInputs.cache
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).AssemblyInfo.cs
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.CoreCompileInputs.cache
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).dll
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\ref\Analizador Lexico (Traductor).dll
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).pdb
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).genruntimeconfig.cache
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\pepit\source\repos\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.ResolveComReference.cache
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).exe
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).deps.json
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).runtimeconfig.json
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).dll
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\ref\Analizador Lexico (Traductor).dll
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).pdb
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.AssemblyReference.cache
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.ResolveComReference.cache
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador_Lexico__Traductor_.Form1.resources
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.GenerateResource.cache
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).GeneratedMSBuildEditorConfig.editorconfig
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).AssemblyInfoInputs.cache
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).AssemblyInfo.cs
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.CoreCompileInputs.cache
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).dll
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\ref\Analizador Lexico (Traductor).dll
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).pdb
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).genruntimeconfig.cache
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Antlr4.Runtime.Standard.dll
+P:\Documentos\Pepe\Academico\CUCEI\6to Semestre\Traductores de Lenguaje II\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.CopyComplete
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).dll
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\ref\Analizador Lexico (Traductor).dll
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).pdb
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).exe
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).deps.json
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).runtimeconfig.json
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).dll
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\ref\Analizador Lexico (Traductor).dll
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).pdb
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.AssemblyReference.cache
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.ResolveComReference.cache
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador_Lexico__Traductor_.Form1.resources
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.GenerateResource.cache
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).AssemblyInfoInputs.cache
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).AssemblyInfo.cs
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Downloads\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).genruntimeconfig.cache
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).exe
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).deps.json
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).runtimeconfig.json
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).dll
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\ref\Analizador Lexico (Traductor).dll
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\bin\Debug\net6.0-windows\Analizador Lexico (Traductor).pdb
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.AssemblyReference.cache
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.ResolveComReference.cache
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador_Lexico__Traductor_.Form1.resources
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.GenerateResource.cache
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).GeneratedMSBuildEditorConfig.editorconfig
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).AssemblyInfoInputs.cache
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).AssemblyInfo.cs
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).csproj.CoreCompileInputs.cache
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).dll
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\ref\Analizador Lexico (Traductor).dll
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).pdb
+P:\Descargas\Analizador Sintactico\Analizador Lexico (Traductor)\obj\Debug\net6.0-windows\Analizador Lexico (Traductor).genruntimeconfig.cache

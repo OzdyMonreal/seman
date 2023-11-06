@@ -1,0 +1,8 @@
+* Hacer una interfaz más intuitiva
+- Léxico.cs -
+* Linea 881
+* Linea 1790
+* Linea 1840
+**** Se agregó  && Var1.Tipos != "Tipo de dato Caracter" para solucionar los problemas del char ****
+- AnalizadorLexico.cs -
+* Se solucionó el error de doble variable NO usada

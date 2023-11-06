@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        ".editorconfig": "editorconfig",
+        "*.html": "html",
+        "*.txt": "cpp"
+    }
+}
