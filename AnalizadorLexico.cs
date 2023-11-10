@@ -4,8 +4,8 @@ namespace Analizador_Lexico__Traductor_
     {
         //ATRIBUTOS GLOBALES//
         Lexico Lexico1 = new Lexico();
-        OpenFileDialog OpenFile = new OpenFileDialog();   
-        
+        OpenFileDialog OpenFile = new OpenFileDialog();
+
         public Form1()
         {
             InitializeComponent();
@@ -28,10 +28,10 @@ namespace Analizador_Lexico__Traductor_
             DGVariables.DataSource = null;
             DGVariables.DataSource = LVariables;
 
-            for(int i = 0; i<LVariables.Count; i++)
+            for (int i = 0; i < LVariables.Count; i++)
             {
 
-                if(LVariables[i].GetUsada()==false)
+                if (LVariables[i].GetUsada() == false)
                 {
                     Error NewWarning = new Error(LVariables[i].Identificador, "La variable esta declarada pero nunca se usa");
                     Warnings.Add(NewWarning);
@@ -39,12 +39,12 @@ namespace Analizador_Lexico__Traductor_
                 }
             }
 
-            for(int j = 0; j<LVariables.Count; j++)
+            for (int j = 0; j < LVariables.Count; j++)
             {
                 Variables Var = LVariables[j];
-                for(int i=j; i<LVariables.Count; i++)
+                for (int i = j; i < LVariables.Count; i++)
                 {
-                    if(Var.Identificador==LVariables[i].Identificador)
+                    if (Var.Identificador == LVariables[i].Identificador)
                     {
                         Error NewWarning = new Error(LVariables[i].Identificador, "La variable esta declarada mas de una vez");
                         Errors.Add(NewWarning);
@@ -68,7 +68,7 @@ namespace Analizador_Lexico__Traductor_
         //ABRIR TXT//
         private void abrirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if(OpenFile.ShowDialog()==DialogResult.OK)
+            if (OpenFile.ShowDialog() == DialogResult.OK)
             {
                 TBCode.Text = File.ReadAllText(OpenFile.FileName);
             }
