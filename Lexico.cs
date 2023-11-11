@@ -203,7 +203,6 @@
                                     FlagNum = false;
                                 }
                             }
-
                         }
                         break;
 
@@ -959,7 +958,7 @@
                                             if (Var.Tipos != "Tipo de dato Cadena" && Var.Tipos != "Tipo de dato Caracter")
                                             {
                                                 Error NewError = new Error(Var.Identificador, "No se puede transformar la cadena " + LToken[i].Caracteres + " a " + Var.Tipos);
-                                                Errors.Add(NewError);
+                                                ErrorSem.Add(NewError);
                                             }
                                         }
                                         else if (LToken[i].General() == "Constante")
@@ -967,7 +966,7 @@
                                             if (Var.Tipos != "Tipo de dato Entero" && Var.Tipos != "Tipo de dato Entero Largo")
                                             {
                                                 Error NewError = new Error(Var.Identificador, "No se puede transformar el entero " + LToken[i].Caracteres + " a " + Var.Tipos);
-                                                Errors.Add(NewError);
+                                                ErrorSem.Add(NewError);
                                             }
                                         }
                                         else if (LToken[i].General() == "Flotante")
@@ -975,7 +974,7 @@
                                             if (Var.Tipos != "Tipo de dato Flotante" && Var.Tipos != "Tipo de dato Doble Punto Flotante")
                                             {
                                                 Error NewError = new Error(Var.Identificador, "No se puede transformar el flotante " + LToken[i].Caracteres + " a " + Var.Tipos);
-                                                Errors.Add(NewError);
+                                                ErrorSem.Add(NewError);
                                             }
                                         }
                                         else if (LToken[i].General() == "Identificador")
@@ -994,7 +993,7 @@
                                                     if (LVariables[c].GetValor() == false)
                                                     {
                                                         Error NewError = new Error(Var2.Identificador, "La variable no tiene un valor asignado");
-                                                        Errors.Add(NewError);
+                                                        ErrorSem.Add(NewError);
                                                     }
                                                     LVariables[c].SetUsada();
                                                 }
@@ -1002,12 +1001,12 @@
                                             if (Declarada == false)
                                             {
                                                 Error NewError = new Error(Var2.Identificador, "La variable no esta declarada");
-                                                Errors.Add(NewError);
+                                                ErrorSem.Add(NewError);
                                             }
                                             if (Var.Tipos != Var2.Tipos)
                                             {
                                                 Error NewError = new Error(Var.Identificador, "No se puede transformar la variable " + Var2.Identificador + " de tipo " + Var2.Tipos + " a tipo " + Var.Tipos);
-                                                Errors.Add(NewError);
+                                                ErrorSem.Add(NewError);
                                             }
 
                                         }
@@ -1059,12 +1058,12 @@
                                                     if (Declarada == false)
                                                     {
                                                         Error NewError = new Error(Var2.Identificador, "La variable no esta declarada");
-                                                        Errors.Add(NewError);
+                                                        ErrorSem.Add(NewError);
                                                     }
                                                     else if (Usada == false)
                                                     {
                                                         Error NewError = new Error(Var2.Identificador, "La variable no tiene un valor asignado");
-                                                        Errors.Add(NewError);
+                                                        ErrorSem.Add(NewError);
                                                     }
                                                 }
                                                 Flag = true;
@@ -1169,20 +1168,20 @@
                                                 if (LVariables[c].GetValor() == false)
                                                 {
                                                     Error NewError = new Error(LToken[4].Caracteres, "La variable no tiene un valor asignado");
-                                                    Errors.Add(NewError);
+                                                    ErrorSem.Add(NewError);
                                                 }
                                                 LVariables[c].SetUsada();
                                                 if(LVariables[c].Tipos != Var.Tipos)
                                                 {
                                                     Error NewError = new Error(LVariables[c].Identificador, "La variable no puede ser comparada con la variable "+ Var.Identificadores);
-                                                    Errors.Add(NewError);
+                                                    ErrorSem.Add(NewError);
                                                 }
                                             }
                                         }
                                         if (Declarada == false)
                                         {
                                             Error NewError = new Error(LToken[4].Caracteres, "La variable no esta declarada");
-                                            Errors.Add(NewError);
+                                            ErrorSem.Add(NewError);
                                         }
                                     if (LToken.Count > 4 && LToken[4].General()=="Identificador" || LToken[4].General() == "Constante" || LToken[4].General() == "Cadena" || LToken[4].General() == "Flotante")
                                     {
@@ -1833,7 +1832,7 @@
                                 if (Declarada == false)
                                 {
                                     Error NewError = new Error(Var2.Identificador, "La variable no esta declarada");
-                                    Errors.Add(NewError);
+                                    ErrorSem.Add(NewError);
                                 }
                                 Flag = true;
                             }
@@ -1890,7 +1889,7 @@
                         if ((Var1.Tipos == "Tipo de dato Cadena" || Var1.Tipos == "Tipo de dato Caracter"))
                         {
                             Error NewError = new Error(Var1.Identificador, "No se puede operar la cadena " + LToken[0].Caracteres + " a " + Var1.Tipos);
-                            Errors.Add(NewError);
+                            ErrorSem.Add(NewError);
                         } 
                         return true;
                     }
@@ -1903,12 +1902,12 @@
                                 if (Var1.Tipos != "Tipo de dato Cadena" && Var1.Tipos != "Tipo de dato Caracter")
                                 {
                                     Error NewError = new Error(Var1.Identificador, "No se puede transformar la cadena "+ LToken[i].Caracteres+ " a " + Var1.Tipos);
-                                    Errors.Add(NewError);
+                                    ErrorSem.Add(NewError);
                                 }
                                 if (conta > 0 && (Var1.Tipos == "Tipo de dato Cadena" || Var1.Tipos == "Tipo de dato Caracter"))
                                 {
                                     Error NewError = new Error(Var1.Identificador, "No se puede operar la cadena " + Var1.Identificador + " a " + Var1.Tipos);
-                                    Errors.Add(NewError);
+                                    ErrorSem.Add(NewError);
                                 }
 
                             }
@@ -1928,12 +1927,12 @@
                                 if (Var1.Tipos != Var2.Tipos)
                                 {
                                     Error NewError = new Error(Var1.Identificador, "No se puede transformar la variable " + Var2.Identificador + " de " + Var2.Tipos + " a " + Var1.Tipos);
-                                    Errors.Add(NewError);
+                                    ErrorSem.Add(NewError);
                                 }
                                 if (conta > 0 && (Var1.Tipos == "Tipo de dato Cadena" || Var1.Tipos == "Tipo de dato Caracter"))
                                 {
                                     Error NewError = new Error(Var2.Identificador, "No se puede operar la cadena " + Var2.Identificador + " a " + Var2.Tipos);
-                                    Errors.Add(NewError);
+                                    ErrorSem.Add(NewError);
                                 }
                             }
                             Flag = true;
@@ -1965,7 +1964,7 @@
                                         if (Var1.Tipos != "Cadena" && Var1.Tipos != "Tipo de dato Caracter")
                                         {
                                             Error NewError = new Error(Var1.Identificador, "No se puede transformar la cadena " + LToken[i].Caracteres + " a tipo " + Var1.Tipos);
-                                            Errors.Add(NewError);
+                                            ErrorSem.Add(NewError);
                                         }
                                     }
                                     if (LToken[i].General() == "Identificador")
