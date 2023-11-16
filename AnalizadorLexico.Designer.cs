@@ -150,12 +150,12 @@
             DGVariables.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             DGVariables.BackgroundColor = Color.Gainsboro;
             DGVariables.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVariables.Location = new Point(1393, 757);
+            DGVariables.Location = new Point(1457, 757);
             DGVariables.Margin = new Padding(4, 5, 4, 5);
             DGVariables.Name = "DGVariables";
             DGVariables.RowHeadersWidth = 62;
             DGVariables.RowTemplate.Height = 25;
-            DGVariables.Size = new Size(501, 258);
+            DGVariables.Size = new Size(436, 258);
             DGVariables.TabIndex = 8;
             // 
             // label3
@@ -163,7 +163,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ControlText;
-            label3.Location = new Point(981, 698);
+            label3.Location = new Point(1002, 698);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(212, 54);
@@ -180,7 +180,7 @@
             DGWarnings.Name = "DGWarnings";
             DGWarnings.RowHeadersWidth = 62;
             DGWarnings.RowTemplate.Height = 25;
-            DGWarnings.Size = new Size(614, 258);
+            DGWarnings.Size = new Size(678, 258);
             DGWarnings.TabIndex = 7;
             // 
             // label4
@@ -226,7 +226,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(1532, 698);
+            label2.Location = new Point(1596, 698);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(185, 54);

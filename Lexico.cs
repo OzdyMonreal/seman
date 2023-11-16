@@ -850,7 +850,7 @@
                 if (Errors.Count == 0)
                 {
                     string Cadena = "";
-                    Error error = new Error(Cadena, "El código se ejecuto correctamente");
+                    Error error = new Error(Cadena, "Sin errores sintácticos");
                     Errors.Add(error);
                     Instrucciones.Clear();
                 }
@@ -938,7 +938,7 @@
                                 return true;
                             }
                             //SI TIENE UN OPERADOR//
-                            else if (LToken.Count > 2 && LToken[2].General() == "Operador")
+                            else if (LToken.Count > 2 && (LToken[2].General() == "Operador" && LToken[2].Caracteres == "="))
                             {
                                 for (int c = 0; c < LVariables.Count; c++)
                                 {
@@ -1866,6 +1866,7 @@
         {
             Variables Var1 = new Variables();
             int conta = 0;
+            int contaAsig = 1;
             //SI ES UNA VARIABLE//
             if (LToken[0].General() == "Identificador")
             {
@@ -1888,7 +1889,7 @@
                     {
                         if ((Var1.Tipos == "Tipo de dato Cadena" || Var1.Tipos == "Tipo de dato Caracter"))
                         {
-                            Error NewError = new Error(Var1.Identificador, "No se puede operar la cadena " + LToken[0].Caracteres + " a " + Var1.Tipos);
+                            Error NewError = new Error(Var1.Identificador, "No se puede operar la cadena " + LToken[0].Caracteres);
                             ErrorSem.Add(NewError);
                         } 
                         return true;
@@ -1897,6 +1898,10 @@
                     {
                         if ((LToken[i].General() == "Identificador" && i % 2 == 0) || (LToken[i].General() == "Constante" && i % 2 == 0) || (LToken[i].General() == "Cadena" && i % 2 == 0) || (LToken[i].General() == "Flotante" && i % 2 == 0))
                         {
+                            if (contaAsig > 1)
+                            {
+                                return false;
+                            }
                             if (LToken[i].General() == "Cadena")
                             {
                                 if (Var1.Tipos != "Tipo de dato Cadena" && Var1.Tipos != "Tipo de dato Caracter")
@@ -1906,10 +1911,9 @@
                                 }
                                 if (conta > 0 && (Var1.Tipos == "Tipo de dato Cadena" || Var1.Tipos == "Tipo de dato Caracter"))
                                 {
-                                    Error NewError = new Error(Var1.Identificador, "No se puede operar la cadena " + Var1.Identificador + " a " + Var1.Tipos);
+                                    Error NewError = new Error(Var1.Identificador, "No se puede operar la cadena " + Var1.Identificador);
                                     ErrorSem.Add(NewError);
                                 }
-
                             }
                             if (LToken[i].General()=="Identificador")
                             {
@@ -1931,7 +1935,7 @@
                                 }
                                 if (conta > 0 && (Var1.Tipos == "Tipo de dato Cadena" || Var1.Tipos == "Tipo de dato Caracter"))
                                 {
-                                    Error NewError = new Error(Var2.Identificador, "No se puede operar la cadena " + Var2.Identificador + " a " + Var2.Tipos);
+                                    Error NewError = new Error(Var2.Identificador, "No se puede operar la cadena " + Var2.Identificador);
                                     ErrorSem.Add(NewError);
                                 }
                             }
@@ -1949,6 +1953,10 @@
                                 conta++;
                                 Flag = true;
                             }
+                            if (LToken[i].Caracteres == "=")
+                            {
+                                contaAsig++;
+                            }
 
                         }
                         else if ((LToken[i].General() == "Caracter" && LToken[i].Caracteres == "("))
@@ -1963,7 +1971,7 @@
                                     {
                                         if (Var1.Tipos != "Cadena" && Var1.Tipos != "Tipo de dato Caracter")
                                         {
-                                            Error NewError = new Error(Var1.Identificador, "No se puede transformar la cadena " + LToken[i].Caracteres + " a tipo " + Var1.Tipos);
+                                            Error NewError = new Error(Var1.Identificador, "No se puede transformar la cadena " + LToken[i].Caracteres + " a " + Var1.Tipos);
                                             ErrorSem.Add(NewError);
                                         }
                                     }
@@ -1993,7 +2001,12 @@
                                     }
                                     else
                                     {
+                                        conta++;
                                         Flag = true;
+                                    }
+                                    if (LToken[i].Caracteres == "=")
+                                    {
+                                        contaAsig++;
                                     }
                                 }
 
