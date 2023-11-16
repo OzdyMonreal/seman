@@ -28,7 +28,7 @@
         public Lexico() { }
 
 
-                                            //ANALIZADOR LEXICO//
+        //ANALIZADOR LEXICO//
 
         //METODOS//
         public List<Token> Scan(string Entry)
@@ -43,7 +43,7 @@
             LVariables = new List<Variables>();
             State = 0;
             StringAux = "";
-            bool FlagNum = false, FlagLetter = false, IsASM=false;
+            bool FlagNum = false, FlagLetter = false, IsASM = false;
 
             CFor = 0;
             CParentesis = 0;
@@ -210,13 +210,13 @@
                     case 2:
 
                         //CADENA//
-                        if(IsASM==true)
-                        { 
-                            if(Character=='a'||Character=='s'||Character=='m'||Character == 'A' || Character == 'S' || Character == 'M')
+                        if (IsASM == true)
+                        {
+                            if (Character == 'a' || Character == 's' || Character == 'm' || Character == 'A' || Character == 'S' || Character == 'M')
                             {
                                 StringAux += Character;
                             }
-                            else if(StringAux=="_asm")
+                            else if (StringAux == "_asm")
                             {
                                 AddToken(StringAux, "Instruccion ensamblador", "Declaracion Ensamblador");
                                 IsASM = false;
@@ -226,7 +226,7 @@
                                 Error error = new Error(StringAux, "Declaracion Ensamblador invalida.");
                                 Errors.Add(error);
                             }
-                            
+
                         }
 
                         else if (Cad == true)
@@ -244,13 +244,13 @@
                             StringAux += Character;
                             IsASM = true;
                         }
-                        
+
                         //EVALUAR SI ES UN CARACTER//
                         else if ((Character >= '!' && Character <= ')') || (Character == '|') || (Character == '+') || (Character == '=') || (Character == '<') || (Character == '>') || (Character == ':'))
                         {
                             StringAux += Character;
                         }
-                        
+
 
 
                         //FIN DE LA CAPTURA//
@@ -691,22 +691,22 @@
                 return true;
             }
 
-            else if(str=="add")
+            else if (str == "add")
             {
                 AddToken(str, "Suma Ensamblador", "Ensamblador");
                 return true;
             }
-            else if(str=="sub")
+            else if (str == "sub")
             {
                 AddToken(str, "Resta Ensamblador", "Ensamblador");
                 return true;
             }
-            else if(str=="mult")
+            else if (str == "mult")
             {
                 AddToken(str, "Multiplicacion Ensamblador", "Ensamblador");
                 return true;
             }
-            else if(str=="div")
+            else if (str == "div")
             {
                 AddToken(str, "Division Ensamblador", "Ensamblador");
                 return true;
@@ -778,7 +778,7 @@
         }
 
 
-                                          //ANALIZADOR SINTACTICO//
+        //ANALIZADOR SINTACTICO//
 
         //TIPO DE ARBOL//
         void Sintactico()
@@ -1147,43 +1147,43 @@
                         if (LToken.Count > 2 && LToken[2].General() == "Identificador" || LToken[2].General() == "Constante" || LToken[2].General() == "Cadena" || LToken[2].General() == "Flotante")
                         {
                             Variables Var = new Variables(LToken[2].Caracteres);
-                            for(int i = 0; i < LVariables.Count; i++)
+                            for (int i = 0; i < LVariables.Count; i++)
                             {
-                                if(LVariables[i].Identificador==LToken[2].Caracteres)
+                                if (LVariables[i].Identificador == LToken[2].Caracteres)
                                 {
                                     Var.SetTipo(LVariables[i].Tipo);
                                 }
-                            }                           
-                            ValidarVar(LToken[2]);                    
+                            }
+                            ValidarVar(LToken[2]);
                             if (LToken.Count > 3 && LToken[3].General() == "Operador Comparacion")
                             {
                                 if (LToken.Count > 4 && LToken[4].General() == "Identificador" || LToken[4].General() == "Constante" || LToken[4].General() == "Cadena" || LToken[4].General() == "Flotante")
-                                {                                
-                                        bool Declarada = false;
-                                        for (int c = 0; c < LVariables.Count; c++)
+                                {
+                                    bool Declarada = false;
+                                    for (int c = 0; c < LVariables.Count; c++)
+                                    {
+                                        if (LVariables[c].Identificadores == LToken[4].Caracteres)
                                         {
-                                            if (LVariables[c].Identificadores == LToken[4].Caracteres)
+                                            Declarada = true;
+                                            if (LVariables[c].GetValor() == false)
                                             {
-                                                Declarada = true;
-                                                if (LVariables[c].GetValor() == false)
-                                                {
-                                                    Error NewError = new Error(LToken[4].Caracteres, "La variable no tiene un valor asignado");
-                                                    ErrorSem.Add(NewError);
-                                                }
-                                                LVariables[c].SetUsada();
-                                                if(LVariables[c].Tipos != Var.Tipos)
-                                                {
-                                                    Error NewError = new Error(LVariables[c].Identificador, "La variable no puede ser comparada con la variable "+ Var.Identificadores);
-                                                    ErrorSem.Add(NewError);
-                                                }
+                                                Error NewError = new Error(LToken[4].Caracteres, "La variable no tiene un valor asignado");
+                                                ErrorSem.Add(NewError);
+                                            }
+                                            LVariables[c].SetUsada();
+                                            if (LVariables[c].Tipos != Var.Tipos)
+                                            {
+                                                Error NewError = new Error(LVariables[c].Identificador, "La variable no puede ser comparada con la variable " + Var.Identificadores);
+                                                ErrorSem.Add(NewError);
                                             }
                                         }
-                                        if (Declarada == false)
-                                        {
-                                            Error NewError = new Error(LToken[4].Caracteres, "La variable no esta declarada");
-                                            ErrorSem.Add(NewError);
-                                        }
-                                    if (LToken.Count > 4 && LToken[4].General()=="Identificador" || LToken[4].General() == "Constante" || LToken[4].General() == "Cadena" || LToken[4].General() == "Flotante")
+                                    }
+                                    if (Declarada == false)
+                                    {
+                                        Error NewError = new Error(LToken[4].Caracteres, "La variable no esta declarada");
+                                        ErrorSem.Add(NewError);
+                                    }
+                                    if (LToken.Count > 4 && LToken[4].General() == "Identificador" || LToken[4].General() == "Constante" || LToken[4].General() == "Cadena" || LToken[4].General() == "Flotante")
                                     {
                                         ValidarVar(LToken[2]);
                                     }
@@ -1222,8 +1222,8 @@
                                     {
                                         if ((LToken[GeneralC].General() == "Identificador" && GeneralC % 2 != 0) || (LToken[GeneralC].General() == "Constante" && GeneralC % 2 != 0) || (LToken[GeneralC].General() == "Cadena" && GeneralC % 2 != 0) || (LToken[GeneralC].General() == "Flotante" && GeneralC % 2 != 0))
                                         {
-                                         
-                                            
+
+
                                             if (LToken[GeneralC].General() == "Identificador")
                                             {
                                                 ValidarVar(LToken[2]);
@@ -1504,10 +1504,10 @@
                             {
                                 if (LToken.Count > 2 && LToken[2].General() == "Identificador" || LToken[2].General() == "Constante" || LToken[2].General() == "Flotante")
                                 {
-                                    if(LToken[2].General()=="Identificador")
+                                    if (LToken[2].General() == "Identificador")
                                     {
                                         ValidarVar(LToken[2]);
-                                    }                                   
+                                    }
                                     CFor++;
                                     return true;
                                 }
@@ -1572,7 +1572,7 @@
                             {
                                 if (LToken.Count > 4 && LToken[4].General() == "Identificador" || LToken[4].General() == "Constante" || LToken[4].General() == "Flotante")
                                 {
-                                    if(LToken[4].General()=="Identificador")
+                                    if (LToken[4].General() == "Identificador")
                                     {
                                         ValidarVar(LToken[4]);
                                     }
@@ -1610,7 +1610,7 @@
                                     {
                                         if ((LToken[GeneralC].General() == "Identificador" && GeneralC % 2 != 0) || (LToken[GeneralC].General() == "Constante" && GeneralC % 2 != 0) || (LToken[GeneralC].General() == "Flotante" && GeneralC % 2 != 0))
                                         {
-                                            if(LToken[GeneralC].General()=="Identificador")
+                                            if (LToken[GeneralC].General() == "Identificador")
                                             {
                                                 ValidarVar(LToken[GeneralC]);
                                             }
@@ -1780,13 +1780,13 @@
                         {
                             if ((LToken[i].General() == "Identificador" || LToken[i].General() == "Cadena") && i % 2 == 0)
                             {
-                                if(LToken[i].General() == "Identificador")
+                                if (LToken[i].General() == "Identificador")
                                 {
                                     ValidarVar(LToken[i]);
                                 }
                                 Flag = true;
                             }
-                            else if ((LToken[i].Caracteres == "endl") && i%2==0)
+                            else if ((LToken[i].Caracteres == "endl") && i % 2 == 0)
                             {
                                 Flag = true;
                             }
@@ -1891,7 +1891,7 @@
                         {
                             Error NewError = new Error(Var1.Identificador, "No se puede operar la cadena " + LToken[0].Caracteres);
                             ErrorSem.Add(NewError);
-                        } 
+                        }
                         return true;
                     }
                     while (i < LToken.Count)
@@ -1906,16 +1906,32 @@
                             {
                                 if (Var1.Tipos != "Tipo de dato Cadena" && Var1.Tipos != "Tipo de dato Caracter")
                                 {
-                                    Error NewError = new Error(Var1.Identificador, "No se puede transformar la cadena "+ LToken[i].Caracteres+ " a " + Var1.Tipos);
+                                    Error NewError = new Error(Var1.Identificador, "No se puede transformar la cadena " + LToken[i].Caracteres + " a " + Var1.Tipos);
                                     ErrorSem.Add(NewError);
                                 }
-                                if (conta > 0 && (Var1.Tipos == "Tipo de dato Cadena" || Var1.Tipos == "Tipo de dato Caracter"))
+                                if (conta > 0)
                                 {
                                     Error NewError = new Error(Var1.Identificador, "No se puede operar la cadena " + Var1.Identificador);
                                     ErrorSem.Add(NewError);
                                 }
                             }
-                            if (LToken[i].General()=="Identificador")
+                            else if (LToken[i].General() == "Constante")
+                            {
+                                if (Var1.Tipos != "Tipo de dato Entero" && Var1.Tipos != "Tipo de dato Entero Largo")
+                                {
+                                    Error NewError = new Error(Var1.Identificador, "No se puede transformar el entero " + LToken[i].Caracteres + " a " + Var1.Tipos);
+                                    ErrorSem.Add(NewError);
+                                }
+                            }
+                            else if (LToken[i].General() == "Flotante")
+                            {
+                                if (Var1.Tipos != "Tipo de dato Flotante" && Var1.Tipos != "Tipo de dato Doble Punto Flotante")
+                                {
+                                    Error NewError = new Error(Var1.Identificador, "No se puede transformar el flotante " + LToken[i].Caracteres + " a " + Var1.Tipos);
+                                    ErrorSem.Add(NewError);
+                                }
+                            }
+                            else if (LToken[i].General() == "Identificador")
                             {
                                 Variables Var2 = new Variables();
                                 for (int c = 0; c < LVariables.Count; c++)
@@ -1933,9 +1949,9 @@
                                     Error NewError = new Error(Var1.Identificador, "No se puede transformar la variable " + Var2.Identificador + " de " + Var2.Tipos + " a " + Var1.Tipos);
                                     ErrorSem.Add(NewError);
                                 }
-                                if (conta > 0 && (Var1.Tipos == "Tipo de dato Cadena" || Var1.Tipos == "Tipo de dato Caracter"))
+                                if (conta > 0 && ((Var1.Tipos == "Tipo de dato Cadena" || Var1.Tipos == "Tipo de dato Caracter") || (Var2.Tipos == "Tipo de dato Cadena" || Var2.Tipos == "Tipo de dato Caracter")))
                                 {
-                                    Error NewError = new Error(Var2.Identificador, "No se puede operar la cadena " + Var2.Identificador);
+                                    Error NewError = new Error(Var1.Identificador, "No se puede operar la cadena " + Var2.Identificador);
                                     ErrorSem.Add(NewError);
                                 }
                             }
@@ -2046,19 +2062,19 @@
             {
                 return false;
             }
-        } 
+        }
 
         //ARBOL 4: ENSAMBLADOR//
         bool Ens(List<Token> LToken)
         {
-            if (LToken[0].General()=="Ensamblador")
+            if (LToken[0].General() == "Ensamblador")
             {
                 MessageBox.Show("Hola");
             }
             return false;
         }
 
-                                            //ANALIZADOR SEMANTICO//
+        //ANALIZADOR SEMANTICO//
 
         void ValidarVar(Token Token1)
         {
@@ -2073,9 +2089,9 @@
                 {
                     Declarada = true;
                     LVariables[c].SetUsada();
-                    if(LVariables[c].GetValor() == true)
+                    if (LVariables[c].GetValor() == true)
                     {
-                        Usada= true;
+                        Usada = true;
                     }
                 }
             }
@@ -2084,7 +2100,7 @@
                 Error NewError = new Error(Var2.Identificador, "La variable no esta declarada");
                 ErrorSem.Add(NewError);
             }
-            else if(Usada==false)
+            else if (Usada == false)
             {
                 Error NewError = new Error(Var2.Identificador, "La variable no tiene un valor asignado");
                 ErrorSem.Add(NewError);
@@ -2109,4 +2125,3 @@
     }
 
 }
-
