@@ -237,6 +237,11 @@
                                 AddToken(StringAux, "Cadena", "Cadena");
                                 Cad = false;
                             }
+                            else if (Character == ';')
+                            {
+                                Error error = new Error(StringAux, "Error. Falta una \" en la cadena");
+                                Errors.Add(error);
+                            }
                         }
 
                         else if ((StringAux[0] == '_'))
@@ -891,6 +896,8 @@
             {
                 if (EsIdentificadorValido(LToken[1].Caracteres))
                 {
+                    int contaAsig = 1;
+                    int conta = 0;
                     //SI ES UN TIPO DE DATO//
                     if (LToken[0].General() == "Tipo de Dato")
                     {
@@ -940,6 +947,7 @@
                             //SI TIENE UN OPERADOR//
                             else if (LToken.Count > 2 && (LToken[2].General() == "Operador" && LToken[2].Caracteres == "="))
                             {
+                                
                                 for (int c = 0; c < LVariables.Count; c++)
                                 {
                                     if (LVariables[c].Identificadores == LToken[1].Caracteres)
@@ -953,11 +961,20 @@
                                 {
                                     if ((LToken[i].General() == "Identificador" && i % 2 != 0) || (LToken[i].General() == "Constante" && i % 2 != 0) || (LToken[i].General() == "Cadena" && i % 2 != 0) || (LToken[i].General() == "Flotante" && i % 2 != 0))
                                     {
+                                        if (contaAsig > 1)
+                                        {
+                                            return false;
+                                        }
                                         if (LToken[i].General() == "Cadena")
                                         {
                                             if (Var.Tipos != "Tipo de dato Cadena" && Var.Tipos != "Tipo de dato Caracter")
                                             {
                                                 Error NewError = new Error(Var.Identificador, "No se puede transformar la cadena " + LToken[i].Caracteres + " a " + Var.Tipos);
+                                                ErrorSem.Add(NewError);
+                                            }
+                                            if (conta > 0)
+                                            {
+                                                Error NewError = new Error(Var.Identificador, "No se puede operar la cadena " + Var.Identificador);
                                                 ErrorSem.Add(NewError);
                                             }
                                         }
@@ -1008,7 +1025,11 @@
                                                 Error NewError = new Error(Var.Identificador, "No se puede transformar la variable " + Var2.Identificador + " de tipo " + Var2.Tipos + " a tipo " + Var.Tipos);
                                                 ErrorSem.Add(NewError);
                                             }
-
+                                            if (conta > 0 && ((Var.Tipos == "Tipo de dato Cadena" || Var.Tipos == "Tipo de dato Caracter") || (Var2.Tipos == "Tipo de dato Cadena" || Var2.Tipos == "Tipo de dato Caracter")))
+                                            {
+                                                Error NewError = new Error(Var.Identificador, "No se puede operar la cadena " + Var2.Identificador);
+                                                ErrorSem.Add(NewError);
+                                            }
                                         }
 
                                         Flag = true;
@@ -1021,8 +1042,12 @@
                                         }
                                         else
                                         {
-
+                                            conta++;
                                             Flag = true;
+                                        }
+                                        if (LToken[i].Caracteres == "=")
+                                        {
+                                            contaAsig++;
                                         }
                                     }
                                     else if ((LToken[i].General() == "Caracter" && LToken[i].Caracteres == "("))
@@ -1076,7 +1101,12 @@
                                                 }
                                                 else
                                                 {
+                                                    conta++;
                                                     Flag = true;
+                                                }
+                                                if (LToken[i].Caracteres == "=")
+                                                {
+                                                    contaAsig++;
                                                 }
                                             }
                                             else if ((LToken[i].General() == "Caracter" && LToken[i].Caracteres == ")"))
