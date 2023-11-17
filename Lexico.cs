@@ -408,12 +408,12 @@
             }
             else if (str == "&&")
             {
-                AddToken(str, "Operador AND", "Operador");
+                AddToken(str, "Operador AND", "Operador And");
                 return true;
             }
             else if (str == "||")
             {
-                AddToken(str, "Operador OR", "Operador");
+                AddToken(str, "Operador OR", "Operador Or");
                 return true;
             }
             else if (str == "==")
@@ -443,32 +443,32 @@
             }
             else if (str == "+=")
             {
-                AddToken(str, "Igualdad e Incremento", "Operador");
+                AddToken(str, "Igualdad e Incremento", "Operador Asignacion");
                 return true;
             }
             else if (str == "-=")
             {
-                AddToken(str, "Igualdad y Decremento", "Operador");
+                AddToken(str, "Igualdad y Decremento", "Operador Asignacion");
                 return true;
             }
             else if (str == "*=")
             {
-                AddToken(str, "Igualdad y Multiplicacion", "Operador");
+                AddToken(str, "Igualdad y Multiplicacion", "Operador Asignacion");
                 return true;
             }
             else if (str == "/=")
             {
-                AddToken(str, "Igualdad y Division", "Operador");
+                AddToken(str, "Igualdad y Division", "Operador Asignacion");
                 return true;
             }
             else if (str == "<<")
             {
-                AddToken(str, "Flujo de Salida", "Operador");
+                AddToken(str, "Flujo de Salida", "Operador Flujo");
                 return true;
             }
             else if (str == ">>")
             {
-                AddToken(str, "Flujo de Entrada", "Operador");
+                AddToken(str, "Flujo de Entrada", "Operador Flujo");
                 return true;
             }
             else if (str == "::")
@@ -1036,6 +1036,8 @@
                                     }
                                     else if (LToken[i].General() == "Operador Comparacion")
                                     {
+                                        Error NewError = new Error(LToken[i].Caracteres, "Error con el Operador de Comparacion " + LToken[i].Caracteres);
+                                        ErrorSem.Add(NewError);
                                         return false;
                                     }
                                     else if ((LToken[i].General() == "Operador" && i % 2 == 0))
@@ -1934,6 +1936,8 @@
                         {
                             if (contaAsig > 1)
                             {
+                                Error NewError = new Error(LToken[i-1].Caracteres, "Error con el Operador de Asignacion " + LToken[i-1].Caracteres);
+                                ErrorSem.Add(NewError);
                                 return false;
                             }
                             if (LToken[i].General() == "Cadena")
@@ -1985,7 +1989,7 @@
                                 }
                                 if (conta > 0 && ((Var1.Tipos == "Tipo de dato Cadena" || Var1.Tipos == "Tipo de dato Caracter") || (Var2.Tipos == "Tipo de dato Cadena" || Var2.Tipos == "Tipo de dato Caracter")))
                                 {
-                                    Error NewError = new Error(Var1.Identificador, "No se puede operar la cadena " + Var2.Identificador);
+                                    Error NewError = new Error(Var2.Identificador, "No se puede operar la cadena " + Var2.Identificador);
                                     ErrorSem.Add(NewError);
                                 }
                             }
@@ -1993,7 +1997,14 @@
                         }
                         else if (LToken[i].General() == "Operador Comparacion")
                         {
+                            Error NewError = new Error(LToken[i].Caracteres, "Error con el Operador de Comparacion " + LToken[i].Caracteres);
+                            ErrorSem.Add(NewError);
                             return false;
+                        }
+                        else if (LToken[i].General() == "Operador Asignacion")
+                        {
+                            contaAsig++;
+
                         }
                         else if ((LToken[i].General() == "Operador" && i % 2 != 0))
                         {
