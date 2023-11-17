@@ -963,6 +963,8 @@
                                     {
                                         if (contaAsig > 1)
                                         {
+                                            Error NewError = new Error(LToken[i - 1].Caracteres, "Error con el Operador de Comparacion " + LToken[i-1].Caracteres);
+                                            ErrorSem.Add(NewError);
                                             return false;
                                         }
                                         if (LToken[i].General() == "Cadena")
