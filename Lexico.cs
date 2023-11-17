@@ -1034,6 +1034,10 @@
 
                                         Flag = true;
                                     }
+                                    else if (LToken[i].General() == "Operador Comparacion")
+                                    {
+                                        return false;
+                                    }
                                     else if ((LToken[i].General() == "Operador" && i % 2 == 0))
                                     {
                                         if (i == LToken.Count - 1)
@@ -1986,6 +1990,10 @@
                                 }
                             }
                             Flag = true;
+                        }
+                        else if (LToken[i].General() == "Operador Comparacion")
+                        {
+                            return false;
                         }
                         else if ((LToken[i].General() == "Operador" && i % 2 != 0))
                         {
