@@ -944,7 +944,7 @@
                             {
                                 return true;
                             }
-                            //SI TIENE UN OPERADOR//
+                            //SI TIENE UN OPERADOR: Se realiza la comprobación de si la variable tiene valor y si ya ha sido usada//
                             else if (LToken.Count > 2 && (LToken[2].General() == "Operador" && LToken[2].Caracteres == "="))
                             {
                                 
@@ -961,12 +961,14 @@
                                 {
                                     if ((LToken[i].General() == "Identificador" && i % 2 != 0) || (LToken[i].General() == "Constante" && i % 2 != 0) || (LToken[i].General() == "Cadena" && i % 2 != 0) || (LToken[i].General() == "Flotante" && i % 2 != 0))
                                     {
+                                        //VERIFICA LA CANTIDAD DE OPERADOR DE ASIGNACION: Si existe más de 1, entonces muestra un error//
                                         if (contaAsig > 1)
                                         {
                                             Error NewError = new Error(LToken[i - 1].Caracteres, "Error con el Operador de Comparacion " + LToken[i-1].Caracteres);
                                             ErrorSem.Add(NewError);
                                             return false;
                                         }
+                                        //VERIFICA EL TIPO DE DATO: Si el tipo de dato no corresponde al dato que se ha tratado de asignar u operar mostrará un error//
                                         if (LToken[i].General() == "Cadena")
                                         {
                                             if (Var.Tipos != "Tipo de dato Cadena" && Var.Tipos != "Tipo de dato Caracter")
@@ -1920,7 +1922,7 @@
                 }
                 ValidarVar(LToken[0]);
                 //SI TIENE UN OPERADOR//
-                if (LToken.Count > 1 && LToken[1].General() == "Operador") // AGREGAR QUE OPERADORES //
+                if (LToken.Count > 1 && LToken[1].General() == "Operador") // PERMITIMOS TODOS LOS OPERADORES, DENTRO DEL IF COMPROBAREMOS SI PUEDEN SER USABLES O NO //
                 {
                     bool Flag = false; int i = 2;
                     if (LToken.Count > 1 && (LToken[1].Caracteres == "++" || LToken[1].Caracteres == "--"))
@@ -1942,6 +1944,7 @@
                                 ErrorSem.Add(NewError);
                                 return false;
                             }
+                            //VERIFICA LOS TIPOS DE DATOS//
                             if (LToken[i].General() == "Cadena")
                             {
                                 if (Var1.Tipos != "Tipo de dato Cadena" && Var1.Tipos != "Tipo de dato Caracter")
@@ -2130,6 +2133,7 @@
         void ValidarVar(Token Token1)
         {
             //INTRODUCIR VARIABLES//
+            //VERIFICA SU USO: Se realiza la comprobación de si la variable tiene valor y si ya ha sido usada//
             Variables Var2 = new Variables(Token1.Caracteres);
             Var2.SetTipo(Token1.Tipos);
             bool Declarada = false;
@@ -2169,6 +2173,7 @@
                 }
             }
         }
+        //OBTENEMOS LAS VARIABLES//
         public List<Variables> GetVariables()
         {
             return LVariables;
